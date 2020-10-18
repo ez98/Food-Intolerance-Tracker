@@ -29,13 +29,13 @@ public class FoodTracker {
 	public FoodTracker(String name, String foods, String symptoms) {
 		this.name = name;
 		this.day = LocalDate.now().getDayOfWeek();
-		setIngredients(foods);
+		setFood(foods);
 		setSymptoms(symptoms);
 	}
 	public FoodTracker(String name, String foods, String symptoms, int hour, int minute) {
 		this.name = name;
 		this.day = LocalDate.now().getDayOfWeek();
-		setIngredients(foods);
+		setFood(foods);
 		setSymptoms(symptoms);
 		setHour(hour); 
 		setMinute(minute);
@@ -43,7 +43,7 @@ public class FoodTracker {
 	public FoodTracker(DayOfWeek day, String name, String foods, String symptoms, int hour, int minute) {
 		this.name = name;
 		this.day = day;
-		setIngredients(foods);
+		setFood(foods);
 		setSymptoms(symptoms);
 		setHour(hour); 
 		setMinute(minute);
@@ -51,7 +51,7 @@ public class FoodTracker {
 	public void setName(String n) {
 		this.name = n;
 	}
-	public void setIngredients(String i) {
+	public void setFood(String i) {
 		if( i.isEmpty() ) {
 			this.foods.add("Undefined");
 		}
@@ -65,8 +65,6 @@ public class FoodTracker {
 				System.out.println("Failed to add ingredients. Try Again.");
 			}
 		}
-		
-
 	}
 	public void setSymptoms(String s) {
 		if( s.isEmpty() ) {
@@ -97,13 +95,6 @@ public class FoodTracker {
 	public void setDay(DayOfWeek d) {
 		this.day = d;
 	}
-	
-	
-	
-	
-	
-	
-	
 	public String getName() {
 		return name;
 	}
